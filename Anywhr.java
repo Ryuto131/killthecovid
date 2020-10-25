@@ -23,7 +23,7 @@ public class Anywhr {
         String neighbourName = sc.nextLine();
         System.out.println("Enter border number:");
         if (!sc.hasNextInt()) {
-          System.out.println("Error~ Invalid input type!");
+          System.out.println("Error! Invalid input type!");
           sc.nextLine();
         } else {
           int border = sc.nextInt();
@@ -37,7 +37,7 @@ public class Anywhr {
         }
         
       } else {
-        System.out.println("Erroe! Invalid input!");
+        System.out.println("Error! Invalid input!");
 
       }
     }
@@ -48,12 +48,10 @@ public class Anywhr {
     for (Coordinate co : hexMap.keySet()){
       if(hexMap.get(co).equals(countryName)) {
         countryCord = co;
-        System.out.println("Country Coordinate is at " + co);
+        System.out.println("Coordinate of "+ countryName + " is at " + co);
       }
     }
     if (countryCord != null) {
-      System.out.println("Country coordinate is " + countryCord);
-      System.out.println(new Coordinate(countryCord.x + 1, countryCord.y, countryCord.z - 1));
       //check border 1
       if (hexMap.get(new Coordinate(countryCord.x + 1, countryCord.y, countryCord.z - 1)) != null) {
         System.out.println("Your neighbour at border 1 is " + hexMap.get(new Coordinate(countryCord.x + 1, countryCord.y, countryCord.z - 1)));
@@ -91,7 +89,7 @@ public class Anywhr {
         System.out.println("no neighbour at border 6");
       }
     } else {
-      System.out.println("No such country");
+      System.out.println("No such country found");
       
     }
     
